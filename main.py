@@ -24,6 +24,7 @@ def main():
                 pCaja = caja()
                 pCaja.cargarCaja(pNaranaja)
 
+    #metodo para cargar cajas en el camion
     def cargarCajas(listaCajas, listaCamion):
         pCamion = camion()
         for pCaja in listaCajas:
@@ -33,14 +34,16 @@ def main():
                 listaCamion.append(pCamion)
                 pCamion = camion()
                 pCamion.cargarCamion(pCaja)
-        
+
+        #si el camion no llega a los 500k lo carga igual en el array de camiones
         if pCamion.getPesoCarga() > 0:
             listaCamion.append(pCamion)
 
+    #metodo para imprimir los camiones y los pesos
     def imprimirCamiones(listaCamion):
         i=1
         for pCamion in listaCamion:
-            if pCamion.getPesoCarga() > 400:
+            if pCamion.getPesoCarga() > 400: #si el camion tiene carga mayor al 80%
                 print(f"\nCamion {i} (carga total: {round(pCamion.getPesoCarga(),2)} kg)")
                 j = 1
                 for pCaja in pCamion.getLstCaja():
