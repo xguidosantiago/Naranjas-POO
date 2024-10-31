@@ -60,7 +60,7 @@ def main():
     lstCajas = []
     lstCamion = []
 
-    crearNaranjas = int(input("ingrese una cantidad de naranjas >"))
+    crearNaranjas = int(input("ingrese una cantidad de naranjas > "))
     generarNaranjas(crearNaranjas)
     empaquetarNaranjas(lstNaranjasExpo,lstCajas)
     cargarCajas(lstCajas, lstCamion)
